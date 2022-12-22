@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>JavaScript Line Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <style>
+        .pitch-container {
+          position: absolute;
+          top: 0;
+          left: 100;
+          width: 250px;
+          height: 250px;
+        }
+
+        .yaw-container{
+          position: absolute;
+          bottom: 0;
+          left: 100;
+          width: 250px;
+          height: 250px;
+        }
+
+        .roll-container {
+            position: absolute;
+            top: 50%;
+            left: 100;
+            width: 250px;
+            height: 250px;
+            transform: translateY(-50%);
+        }
+        .vertical-line {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 5px;
+          background-color: black;
+          z-index: -1;
+        }
+        body {
+            font-family: Verdana, sans-serif;
+        }
+        .telem-title {
+            position: relative;
+            top: 550px;
+            font-size: 50px;
+            transform: rotate(-90deg);
+            transform-origin: left top;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+      </style>
+  </head>
+  <body>
+
+    <div class="telem-title">
+        <h2>Telemetry</h2>
+    </div>
+    <div class="vertical-line" style="left: 350px;"></div>
+
+    <div class="pitch-container">
+        <canvas id="pitchChart" width="200" height="200"></canvas>
+    </div>
+
+    <div class="yaw-container">
+        <canvas id="yawChart" width="200" height="200"></canvas>
+    </div>
+
+    <div class="roll-container">
+        <canvas id="rollChart" width="200" height="200"></canvas>
+    </div>
+
+    <img class="center" id="rocketImage" src="./rocket.png" style="width:400px; height: 700px; position: relative; top: -150px">
+
+
+    <script src="./main.js">
+      </script>
+    
+  </body>
+</html>
